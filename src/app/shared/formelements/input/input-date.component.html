@@ -1,0 +1,14 @@
+<!-- COM Fecha -->
+<div class="sorteos__labelInput">
+    <label class="sorteos__label" [for]="fieldName">{{label}}</label>
+    <mat-form-field class="sorteos__formCalendar" appearance="none" [showButtonBar]="true" [readonlyInput]="true">
+        <input matInput [matDatepicker]="picker" id="fecha" placeholder=" " (dateChange)="onChange($event)" class="sorteos__inputFecha" readonly="false" >
+        <mat-datepicker-toggle matSuffix [for]="picker" matTooltip="Fecha" matTooltipPosition="above" aria-label="Bot&#243;n que permite seleccionar una fecha"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <!-- <div class="login__error" *ngIf="formulario.controls.fecha?.touched && formulario.controls.fecha?.value === ''">
+        <mat-error>
+            {{constante.ERROR_CAMPO_NULL}}
+        </mat-error>
+    </div> -->
+</div>

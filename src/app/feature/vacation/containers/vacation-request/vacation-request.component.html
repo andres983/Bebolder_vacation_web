@@ -1,0 +1,23 @@
+<div class="registration-page-wrapper">
+    <form class="registration-form" autocomplete="off" *ngIf="applicationForm" [formGroup]="applicationForm"
+        (ngSubmit)="submitRegistrationForm()">
+
+        <div class="registration_tittle">
+            <label> Request Vacation </label>
+        </div>
+
+        <!-- COM Initial Date ******* -->
+        <app-input-date [parentForm]="applicationForm" fieldName="fechaInicial" label="Initial date"
+            formControlName="fechaInicial"  ></app-input-date>
+
+        <!-- COM Return date ******* -->
+        <app-input-date [parentForm]="applicationForm" fieldName="fechaReintegro" label="Return date"
+            formControlName="fechaReintegro"></app-input-date>
+
+        <!-- COM Boton ******* -->
+        <div class="registration__button">
+            <button class="btn button__save" type="submit" [disabled]="applicationForm?.invalid">Save</button>
+        </div>
+    </form>
+
+</div>

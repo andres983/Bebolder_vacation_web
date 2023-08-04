@@ -5,21 +5,19 @@ import {
   NO_ERRORS_SCHEMA,
 } from '@angular/core';
 
-import {
-  InputDateComponent,
-} from './formelements/input-date/input-date.component';
+import { NavbarComponent } from './layoutComponents/navbar/navbar.component';
 
 @NgModule({
   declarations: [
-    InputDateComponent
+    NavbarComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
   ],
   exports: [
-    InputDateComponent
+    NavbarComponent
   ],
-   schemas: [
+  schemas: [
     NO_ERRORS_SCHEMA,
     CUSTOM_ELEMENTS_SCHEMA
   ]

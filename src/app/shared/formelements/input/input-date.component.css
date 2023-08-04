@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding: 0;
+}
+
+h1 {
+    font-size: 5rem;
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+h3 {
+    font-size: 3rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 90%;
+    overflow-x: hidden;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.login__error {
+    height: 15px;
+    min-height: 15px;
+    transform: translate(13px, 2px);
+    width: 100%;
+}
+
+.sorteos__labelInput {
+    margin-top: 0.3rem;
+    width: 100%;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    flex-direction: column;
+    height: 85px;
+    max-height: 85px;
+}
+
+.sorteos__label {
+    color: var(--primario);
+    font-size: 0.8rem;
+    font-weight: 500;
+    display: inline-block;
+    width: 100%;
+    margin-left: 1rem;
+    height: 20px;
+}
+
+::placeholder {
+    font-size: 0.8rem;
+    padding-left: 0.4rem;
+}
+
+/* COM Fecha *******/
+
+input.mat-input-element {
+    font-size: 0.9rem;
+    -webkit-transform: translateY(-34px);
+    -moz-transform: translateY(-34px);
+    -o-transform: translateY(-34px);
+    -ms-transform: translateY(-34px);
+    transform: translateY(-34px);
+}
+
+.sorteos__formCalendar {
+    flex: 1 auto;
+    min-height: 39px;
+    max-height: 39px;
+    -moz-border-radius: 3rem;
+    -webkit-border-radius: 3rem;
+    border-radius: 3rem;
+    background: var(--naranjaClaro);
+    border-color: var(--blanco) #2222;
+    -webkit-box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
+    -moz-box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
+    box-shadow: 0 6px 10px 0 rgb(0 0 0 / 10%);
+    margin-top: 0.5rem;
+    width: 100%;
+    max-width: 100%;
+}
+
+.sorteos__inputFecha {
+    font-size: 0.8rem;
+    position: relative;
+    font-size: 1rem;
+    outline: none;
+}
+
+.calendar-button {
+    flex: 1 auto;
+    -moz-border-radius: 0rem 1rem 1rem 0rem;
+    -webkit-border-radius: 0rem 1rem 1rem 0rem;
+    border-radius: 0rem 1rem 1rem 0rem;
+}
+
+.sorteos__inputFecha:not(:placeholder-shown)+.sorteos__labelFecha,
+.sorteos__inputFecha:focus+.sorteos__labelFecha {
+    -webkit-transform: translate(6px, -28px) scale(.9);
+    -moz-transform: translate(6px, -28px) scale(.9);
+    -o-transform: translate(6px, -28px) scale(.9);
+    -ms-transform: translate(6px, -28px) scale(.9);
+    transform: translate(6px, -28px) scale(.9);
+    color: var(--letra);
+}
+
+/* COM .Fecha ******* */
+
+/* COM Media Querys *********************************************** */
+
+@media screen and (min-width: 768px) {
+    .sorteos__label {
+        margin-left: 1rem;
+    }
+
+    .monitoreo__inputFecha {
+        font-size: 1rem;
+    }
+
+    .sorteos__formCalendar {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    input.mat-input-element {
+        font-size: 1rem;
+
+    }
+}
+

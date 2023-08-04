@@ -1,0 +1,129 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 1rem 0 4rem 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 5rem;
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+h3 {
+    font-size: 3rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 90%;
+}
+
+
+/* Utilidades */
+
+.text-center {
+    text-align: center;
+}
+
+
+/* Header */
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 78px;
+    width: 100vw;
+    padding: 1rem 0;
+    box-shadow: 2px 2px 2px 1px var(--rojo);
+    z-index: 1;
+    position: fixed;
+}
+
+.header__contenedorImagen {
+    height: 80px;
+    flex: 1 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__imagen {
+    background-image: var(--imagenNavbar);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 5rem;
+    width: 5rem;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    /* filter: invert(1); */
+    transform: translate(0, 25px);
+    z-index: 1;
+    cursor: pointer;
+}
+
+@media screen and (min-height: 600px) {
+    .header__imagen {
+        height: 6rem;
+        width: 6rem;
+    }
+
+    .header__imagen {
+        /* filter: invert(1); */
+        transform: translate(0, 25px);
+    }
+
+}
+
+@media screen and (min-height: 800px) {
+    .header {
+        height: 90px;
+        min-height: 90px;
+    }
+
+    .header__imagen {
+        height: 7rem;
+        width: 7rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .header__imagen {
+        transform: translate(0, 19px);
+        height: 6.4rem;
+        width: 6.4rem;
+    }
+
+}
+
+@media screen and (min-width: 2000px) and (min-height: 1200px) {
+    .header {
+        height: 120px;
+    }
+
+    .header__imagen {
+        height: 8rem;
+        width: 8rem;
+        -webkit-transform: translate(0px, 42px);
+        -moz-transform: translate(0px, 42px);
+        -o-transform: translate(0px, 42px);
+        -ms-transform: translate(0px, 42px);
+        transform: translate(0px, 42px);
+    }
+}

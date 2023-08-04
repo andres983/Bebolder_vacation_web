@@ -1,7 +1,24 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {
+  RouterModule,
+  Routes,
+} from '@angular/router';
 
-const routes: Routes = [];
+import {
+  VacationRequestComponent,
+} from './containers/vacation-request/vacation-request.component';
+import { HomeVacationComponent } from './home-vacation/home-vacation.component';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: HomeVacationComponent,
+    children: [
+      { path: '', component: VacationRequestComponent },
+    ]
+  }
+];
+
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

@@ -1,0 +1,61 @@
+:root {
+    --primario: #2A354D;
+    --secundario: #E7541C;
+    --negro: #000000;
+    --naranjaClaro: #FA7D44;
+    --blanco: #fff;
+    --texto: #fff;
+    --textoAnimacionDashboard: #fff;
+    --fondo: #fff;
+    --gris: #e8ebf6;
+    --letra: #333333;
+    --fuentePrincipal: "Poppins", Arial, sans-serif;
+    --fuenteSecundaria: "Poppins Bold", Arial, sans-serif;
+    --tran-02: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
+  
+
+    --imagenNavbar: url('../../../../assets/images/icons/icon_bebolder.png');
+    --degrade270: linear-gradient(270deg, var(--naranjaClaro), var(--negro) 30.78%);
+    --degrade135: linear-gradient(135deg, var(--naranjaClaro), var(--negro));
+    --degrade360: linear-gradient(360deg, var(--naranjaClaro), var(--negro));
+    --degrade200: linear-gradient(200deg, var(--naranjaClaro), var(--negro) 30.78%);
+    --degrade180: linear-gradient(180deg, var(--naranjaClaro), var(--negro));
+
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 62.5%;
+    line-height: 2;
+}
+
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+body {
+    font-family: var(--fuentePrincipal);
+    font-size: 1.6rem;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+.contenedor-navbar,
+.header {
+    background: var(--degrade270);
+}
