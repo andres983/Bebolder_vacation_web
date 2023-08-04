@@ -1,4 +1,5 @@
 import {
+  ChangeDetectorRef,
   Component,
   EventEmitter,
   forwardRef,
@@ -45,15 +46,25 @@ export class InputDateComponent implements ControlValueAccessor {
 
   constructor(
     private readonly utilDateService: UtilDateService,
+    private readonly cdr: ChangeDetectorRef,
     private readonly sweetAlertService: SweetAlertService) { }
 
   writeValue(value: string | null): void {
-    value = value ?? this.utilDateService.formatDatePipe();
+   
+  
+    if (value !== this.value) {
+      this.value = value;
+    }
+    if (value == null || value === '') {
+      this.changed(this.utilDateService.formatDatePipe());
+      this.touched();
+
+    }
   }
 
   public onChange(event: Event): void {
-    const fechaSeleccionada = this.utilDateService.formatDateParamPipe((event.target as HTMLInputElement).value);
 
+    const fechaSeleccionada = this.utilDateService.formatDateParamPipe((event.target as HTMLInputElement).value);
     const esFechaMenorALaActual = this.utilDateService.validarFechaMenorALaActual(fechaSeleccionada);
 
     if (esFechaMenorALaActual === true) {

@@ -23,6 +23,7 @@ import {
 } from '../../../../core/service/sweet-alert.service';
 import { UtilDateService } from '../../../../core/service/util-date.service';
 import { IRegistrationRequest } from '../../data/IRequestVacation';
+import { IResponseRequestVacation } from '../../data/IResponseRequestVacation';
 import { VacationService } from '../../services/vacation.service';
 
 export const MY_FORMATS = {
@@ -71,8 +72,8 @@ export class VacationRequestComponent implements OnInit, OnDestroy {
 
   public formBuild(): void {
     this.applicationForm = this.fb.group({
-      fechaInicial: ['', [Validators.required]],
-      fechaReintegro: ['', [Validators.required]],
+      fechaInicial: [this.utilDateService.formatDatePipe(), [Validators.required]],
+      fechaReintegro: [this.utilDateService.formatDatePipe(), [Validators.required]],
 
     });
   }
@@ -87,7 +88,6 @@ export class VacationRequestComponent implements OnInit, OnDestroy {
   public submitRegistrationForm(): void {
 
     if (this.applicationForm.valid) {
-
       const iRegistrationRequest: IRegistrationRequest = {
         employeeId: 1,
         initialDate: this.applicationForm.controls.fechaInicial.value,
@@ -98,24 +98,29 @@ export class VacationRequestComponent implements OnInit, OnDestroy {
 
         if (accion) {
           this.subs.add(this.vacationService.createRequest(iRegistrationRequest).subscribe({
-            next: () => {
+            next: (response: IResponseRequestVacation) => {
 
+              if (Object.keys(response).length >= 1) {
+                this.sweetAlertService.sweetAlertExito(constantes.MENSAJE_CONFIRMACION_REGISTRO_SOLICITUD_VACACION_EXITOSO);
+                this.cleanForm();
+              }
             }
           }));
         }
-
       });
-
-
-
     } else {
       this.sweetAlertService.sweetAlertInformativo(constantes.MENSAJE_VERIFIQUE_CAMPOS_FORMULARIO);
     }
   }
 
 
+  public cleanForm():void{
+    this.applicationForm.reset();
+    this.applicationForm.controls.fechaInicial.setValue('');
+    this.applicationForm.controls.fechaReintegro.setValue('');
+  }
+
   ngOnDestroy(): void {
     this.subs.unsubscribe();
   }
-
 }

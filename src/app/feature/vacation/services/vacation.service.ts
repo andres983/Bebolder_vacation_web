@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 import { environment } from '../../../../environments/environment';
 import { constantes } from '../../../core/data/Constantes';
 import { IRegistrationRequest } from '../data/IRequestVacation';
+import { IResponseRequestVacation } from '../data/IResponseRequestVacation';
 
 @Injectable({
   providedIn: 'root'
@@ -26,7 +27,7 @@ export class VacationService {
     return this.http.get<IRegistrationRequest[]>(`${environment.api}${constantes.GETREQUESTVACATION}${idUsuario}`);
   }
 
-  public createRequest(request: IRegistrationRequest): Observable<IRegistrationRequest> {
-    return this.http.post<IRegistrationRequest>(`${environment.api}${constantes.CREATEREQUESTVACATION}`, request, this.respuesta);
+  public createRequest(request: IRegistrationRequest): Observable<IResponseRequestVacation> {
+    return this.http.post<IResponseRequestVacation>(`${environment.api}${constantes.CREATEREQUESTVACATION}`, request, this.respuesta);
   }
 }

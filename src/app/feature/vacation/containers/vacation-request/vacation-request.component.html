@@ -2,6 +2,8 @@
     <form class="registration-form" autocomplete="off" *ngIf="applicationForm" [formGroup]="applicationForm"
         (ngSubmit)="submitRegistrationForm()">
 
+        <!-- <pre>{{applicationForm.getRawValue() | json}}</pre> -->
+
         <div class="registration_tittle">
             <label> Request Vacation </label>
         </div>

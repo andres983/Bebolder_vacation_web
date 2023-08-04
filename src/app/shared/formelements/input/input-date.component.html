@@ -2,7 +2,7 @@
 <div class="sorteos__labelInput">
     <label class="sorteos__label" [for]="fieldName">{{label}}</label>
     <mat-form-field class="sorteos__formCalendar" appearance="none" [showButtonBar]="true" [readonlyInput]="true">
-        <input matInput [matDatepicker]="picker" id="fecha" placeholder=" " (dateChange)="onChange($event)" class="sorteos__inputFecha" readonly="false" >
+        <input matInput [matDatepicker]="picker" id="fecha" placeholder=" " (dateChange)="onChange($event)" class="sorteos__inputFecha" readonly="false" [value]="value">
         <mat-datepicker-toggle matSuffix [for]="picker" matTooltip="Fecha" matTooltipPosition="above" aria-label="Bot&#243;n que permite seleccionar una fecha"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
