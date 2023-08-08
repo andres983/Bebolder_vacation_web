@@ -123,10 +123,20 @@ table.mat-table {
     border-radius: 0;
 }
 
+input.mat-input-element {
+    font-size: 0.9rem;
+    color: #181818;
+}
+
+.mat-form-field-appearance-standard .mat-form-field-underline,
 .mat-paginator-container {
     background-color: var(--naranjaClaro);
     color: var(--letra);
     font-size: 0.8rem;
+}
+
+.mat-paginator-outer-container {
+    /* width: 100vw; */
 }
 
 th.mat-header-cell,
@@ -196,12 +206,21 @@ mat-card {
 
 table tr:last-child td {
     border-bottom: 0 solid;
+    text-align: center;
 }
 
 .mat-content {
     -ms-flex-direction: column !important;
     -webkit-flex-direction: column !important;
     flex-direction: column !important;
+}
+
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+    color: var(--secundario);
+}
+
+.mat-select-value-text {
+    color: #181818 !important;
 }
 
 

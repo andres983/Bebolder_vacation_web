@@ -2,10 +2,18 @@
     <div class="tableRequest__header">
         <label>Vacation request list</label>
     </div>
-    <mat-form-field appearance="standard">
+
+    <div class="tableRequest__filtrosGeneral">
+        <div class="tableRequest__filtroBuscar">
+            <box-icon name='search' color='#3d3c3c' class="iconPlaceholder"></box-icon>
+            <input class="tableRequest__inputBuscar input-field" id="buscar" (keyup)="applyFilter($event)" type="text" placeholder="Search ... " #input>
+        </div>
+    </div>
+
+    <!-- <mat-form-field appearance="standard" class="tableRequest_filter">
         <mat-label>Filter</mat-label>
-        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
-    </mat-form-field>
+        <input matInput (keyup)="applyFilter($event)" class="tableRequest__inputBuscar input-field" placeholder="Ex. Mia" #input>
+    </mat-form-field> -->
 
     <div class="mat-elevation-z8">
         <table mat-table [dataSource]="dataSource" matSort>
@@ -19,7 +27,7 @@
             <!-- COM application Date -->
             <ng-container matColumnDef="applicationDate">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> application Date </th>
-                <td mat-cell *matCellDef="let row"> {{row?.applicationDate}}% </td>
+                <td mat-cell *matCellDef="let row"> {{row?.applicationDate}} </td>
             </ng-container>
 
             <!-- COM days Requested -->
