@@ -14,7 +14,7 @@ const routes: Routes = [
     path: '',
     component: HomeVacationComponent,
     children: [
-      { path: '', component: VacationRequestComponent },
+      { path: 'request', component: VacationRequestComponent },
     ]
   }
 ];

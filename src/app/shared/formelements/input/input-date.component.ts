@@ -50,12 +50,12 @@ export class InputDateComponent implements ControlValueAccessor {
     private readonly sweetAlertService: SweetAlertService) { }
 
   writeValue(value: string | null): void {
-   
-  
+
+
     if (value !== this.value) {
       this.value = value;
     }
-    if (value == null || value === '') {
+    if ([null, ''].includes(value)) {
       this.changed(this.utilDateService.formatDatePipe());
       this.touched();
 

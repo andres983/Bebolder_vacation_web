@@ -1,25 +1,4 @@
-<div class="registration-page-wrapper">
-    <form class="registration-form" autocomplete="off" *ngIf="applicationForm" [formGroup]="applicationForm"
-        (ngSubmit)="submitRegistrationForm()">
-
-        <!-- <pre>{{applicationForm.getRawValue() | json}}</pre> -->
-
-        <div class="registration_tittle">
-            <label> Request Vacation </label>
-        </div>
-
-        <!-- COM Initial Date ******* -->
-        <app-input-date [parentForm]="applicationForm" fieldName="fechaInicial" label="Initial date"
-            formControlName="fechaInicial"  ></app-input-date>
-
-        <!-- COM Return date ******* -->
-        <app-input-date [parentForm]="applicationForm" fieldName="fechaReintegro" label="Return date"
-            formControlName="fechaReintegro"></app-input-date>
-
-        <!-- COM Boton ******* -->
-        <div class="registration__button">
-            <button class="btn button__save" type="submit" [disabled]="applicationForm?.invalid">Save</button>
-        </div>
-    </form>
-
-</div>
+<app-vacation-request-form></app-vacation-request-form>
+<ng-container *ngIf="listRequest.length > 0">
+    <app-table-request [listRequest]="listRequest"></app-table-request>
+</ng-container>

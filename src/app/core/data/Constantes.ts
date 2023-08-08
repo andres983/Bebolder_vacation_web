@@ -1,5 +1,5 @@
 
-const GETREQUESTVACATION = 'user/';
+const GETREQUESTVACATION = 'vacation/user/';
 const CREATEREQUESTVACATION = 'vacation/save';
 
 // Mensajes de confirmación

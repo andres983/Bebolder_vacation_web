@@ -8,7 +8,7 @@ import {
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/request' },
   {
-    path: 'request', loadChildren: () => import('./feature/vacation/vacation.module').then(mod => mod.VacationModule)
+    path: 'vacation', loadChildren: () => import('./feature/vacation/vacation.module').then(mod => mod.VacationModule)
   },
   { path: '**', pathMatch: 'full', redirectTo: '/request' },
 ];

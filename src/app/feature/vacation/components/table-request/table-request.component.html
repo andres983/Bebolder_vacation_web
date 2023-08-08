@@ -1,1 +1,66 @@
-<p>table-request works!</p>
+<div class="tableRequest contenedor">
+    <div class="tableRequest__header">
+        <label>Vacation request list</label>
+    </div>
+    <mat-form-field appearance="standard">
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+    </mat-form-field>
+
+    <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort>
+
+            <!-- COM ID  -->
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
+                <td mat-cell *matCellDef="let row"> {{row?.id}} </td>
+            </ng-container>
+
+            <!-- COM application Date -->
+            <ng-container matColumnDef="applicationDate">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> application Date </th>
+                <td mat-cell *matCellDef="let row"> {{row?.applicationDate}}% </td>
+            </ng-container>
+
+            <!-- COM days Requested -->
+            <ng-container matColumnDef="daysRequested">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> days Requested </th>
+                <td mat-cell *matCellDef="let row"> {{row?.daysRequested}} </td>
+            </ng-container>
+
+            <!--COM initial Date -->
+            <ng-container matColumnDef="initialDate">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> initial Date </th>
+                <td mat-cell *matCellDef="let row"> {{row?.initialDate}} </td>
+            </ng-container>
+
+            <!--COM withdrawal Date -->
+            <ng-container matColumnDef="withdrawalDate">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> withdrawal Date </th>
+                <td mat-cell *matCellDef="let row"> {{row?.withdrawalDate}} </td>
+            </ng-container>
+
+            <!--COM state Vacation -->
+            <ng-container matColumnDef="stateVacation">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> state Vacation </th>
+                <td mat-cell *matCellDef="let row"> {{row?.stateVacationId | vacationEstate}} </td>
+            </ng-container>
+
+            <!--COM approved -->
+            <ng-container matColumnDef="approved">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> approved </th>
+                <td mat-cell *matCellDef="let row"> {{row?.approved}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+            <!-- Row shown when there is no matching data. -->
+            <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+            </tr>
+        </table>
+
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+    </div>
+</div>

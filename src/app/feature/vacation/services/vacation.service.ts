@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 
 import { environment } from '../../../../environments/environment';
 import { constantes } from '../../../core/data/Constantes';
-import { IRegistrationRequest } from '../data/IRequestVacation';
+import { IRegistrationRequest } from '../data/IRegistrationRequest';
 import { IResponseRequestVacation } from '../data/IResponseRequestVacation';
 
 @Injectable({
@@ -23,8 +23,8 @@ export class VacationService {
 
   constructor(private readonly http: HttpClient) { }
 
-   public getRequest(idUsuario: number): Observable<IRegistrationRequest[]> {
-    return this.http.get<IRegistrationRequest[]>(`${environment.api}${constantes.GETREQUESTVACATION}${idUsuario}`);
+  public getRequest(idUsuario: number): Observable<IResponseRequestVacation[]> {
+    return this.http.get<IResponseRequestVacation[]>(`${environment.api}${constantes.GETREQUESTVACATION}${idUsuario}`);
   }
 
   public createRequest(request: IRegistrationRequest): Observable<IResponseRequestVacation> {

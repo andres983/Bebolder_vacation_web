@@ -27,20 +27,18 @@ body {
 /* COM Fuente ******************************** */
 
 @font-face {
-  font-display: swap;
-  font-family: "Poppins";
-  src: local("Poppins"), url('./assets/fonts/Poppins/Poppins-Black.ttf') format("truetype");
-  font-style: normal;
+    font-display: swap;
+    font-family: "Poppins";
+    src: local("Poppins"), url('./assets/fonts/Poppins/Poppins-Black.ttf') format("truetype");
+    font-style: normal;
 }
 
 @font-face {
-  font-display: swap;
-  font-family: "Poppins Bold";
-  font-weight: 700;
-  src: local("Poppins_bold"), url('./assets/fonts/Poppins/Poppins-Bold.ttf') format("truetype");
+    font-display: swap;
+    font-family: "Poppins Bold";
+    font-weight: 700;
+    src: local("Poppins_bold"), url('./assets/fonts/Poppins/Poppins-Bold.ttf') format("truetype");
 }
-
-
 
 
 /* COM Angular Material ******************************** */
@@ -63,7 +61,6 @@ body {
     height: 100% !important;
     display: flex !important;
     align-items: center !important;
-    /* background-color: lightcoral; */
 }
 
 .mat-paginator-icon {
@@ -89,8 +86,6 @@ body {
 .example-headers-align .mat-form-field+.mat-form-field {
     margin-left: 8px;
 }
-
-
 
 .mat-header-cell,
 .mat-footer-cell,
@@ -128,6 +123,12 @@ table.mat-table {
     border-radius: 0;
 }
 
+.mat-paginator-container {
+    background-color: var(--naranjaClaro);
+    color: var(--letra);
+    font-size: 0.8rem;
+}
+
 th.mat-header-cell,
 td.mat-cell,
 td.mat-footer-cell {
@@ -161,24 +162,10 @@ td.mat-footer-cell:last-of-type {
 }
 
 .mat-sort-header-content {
-    color: var(--primario);
+    color: #181818 !important;
     font-weight: 700;
     font-size: 0.8rem;
 }
-
-
-
-.mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
-    background-color: #e8ebf6 !important;
-}
-
-.mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
-    background-color: var(--primario) !important;
-}
-
-
-
-
 
 .contenedor-filter-calendar .mat-form-field-wrapper {
     display: flex;
@@ -205,18 +192,11 @@ mat-card {
 }
 
 
-
-
-
-
-
 /*To remove the last border*/
 
 table tr:last-child td {
     border-bottom: 0 solid;
 }
-
-
 
 .mat-content {
     -ms-flex-direction: column !important;
@@ -234,7 +214,6 @@ button:not(:disabled) {
     background-color: transparent;
     border: 0;
 }
-
 
 
 /* .Angular Material  */
@@ -268,8 +247,6 @@ button:not(:disabled) {
 .block-ui-wrapper {
     background: rgba(0, 0, 0, 0.85) !important;
 }
-
-
 
 
 /* COM SweetAlert **************** */
@@ -320,9 +297,6 @@ button:not(:disabled) {
 }
 
 
-
-
-
 /* COM ++++++++++++++++++++++++++++++++++++++++++++++ */
 
 .mat-form-field-prefix,
@@ -355,8 +329,6 @@ pre {
 .mat-form-field-appearance-legacy .mat-form-field-suffix .mat-icon {
     color: #808080 !important;
 }
-
-
 
 
 /* COM Input fecha  */
@@ -403,8 +375,13 @@ pre {
     width: 98%;
 }
 
-
-
+th.mat-header-cell,
+td.mat-cell,
+td.mat-footer-cell {
+    color: #181818;
+    font-family: var(--fuentePrincipal);
+    font-weight: 300;
+}
 
 
 /* COM Media Querys ************************** */
@@ -415,8 +392,6 @@ pre {
     }
 }
 
-
-
 @media screen and (min-width: 768px) {
     .mat-sort-header-content {
         font-size: 1rem;
@@ -426,11 +401,9 @@ pre {
     td.mat-footer-cell:last-of-type {
         font-size: 1rem !important;
     }
-
     .table-responsive {
         font-size: 0.8rem;
     }
- 
     .mat-form-field-appearance-legacy .mat-form-field-infix {
         -webkit-transform: translate(-7px, -6px) !important;
         -moz-transform: translate(-7px, -6px) !important;
@@ -452,7 +425,6 @@ pre {
     td.mat-footer-cell {
         font-size: 0.9rem !important;
     }
-
     .mat-form-field-appearance-legacy .mat-form-field-infix {
         -webkit-transform: translate(-10px, -11px) !important;
         -moz-transform: translate(-10px, -11px) !important;
